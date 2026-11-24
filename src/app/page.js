@@ -323,14 +323,14 @@ export default function WorkstationPage() {
   const currentCost = resolution === "4k" ? 36 : 18;
 
   return (
-    <div className="flex-1 flex flex-col md:flex-row md:overflow-hidden overflow-y-auto bg-zinc-950 text-zinc-100 font-sans">
+    <div className="flex-1 flex flex-col md:flex-row md:overflow-hidden overflow-y-auto bg-bg-page text-primary-text font-sans">
       {/* ─── LEFT WORKSPACE: SIDEBAR CONFIGURATION ────────────────────────────────────────── */}
       <div className="w-full md:w-[460px] border-r border-zinc-800 bg-zinc-900/60 flex flex-col md:overflow-y-auto overflow-visible flex-shrink-0">
         {/* Header Title */}
         <div className="p-5 border-b border-zinc-800 flex-shrink-0 bg-zinc-900/85 flex items-center justify-between">
           <div>
             <h1 className="text-base font-heading font-extrabold text-white tracking-tight flex items-center gap-2">
-              <FaHandSparkles className="text-violet-400" /> Logo Design Engine
+              <FaHandSparkles className="text-rose-400" /> Logo workshop
             </h1>
             <p className="text-[11px] text-zinc-400 mt-1 font-medium">
               Input directives, upload sketches, and generate professional brand
@@ -345,7 +345,7 @@ export default function WorkstationPage() {
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="block text-[11px] font-black text-zinc-200 uppercase tracking-wider">
-                1. Logo Prompt Directive
+                1. Describe your logo
               </label>
               <span className="text-[10px] text-zinc-550 font-black">
                 {prompt.length} / 1,000
@@ -355,7 +355,7 @@ export default function WorkstationPage() {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value.slice(0, 1000))}
               rows={4}
-              className="w-full bg-zinc-950 border border-zinc-800 hover:border-zinc-700 focus:border-violet-500 rounded px-3 py-2.5 text-xs font-medium text-white placeholder-zinc-650 focus:outline-none focus:ring-1 focus:ring-violet-500/30 resize-none transition-all leading-normal"
+              className="w-full bg-zinc-950 border border-zinc-800 hover:border-zinc-700 focus:border-rose-500 rounded px-3 py-2.5 text-xs font-medium text-white placeholder-zinc-650 focus:outline-none focus:ring-1 focus:ring-rose-500/30 resize-none transition-all leading-normal"
               placeholder="Describe the logo elements, colors, symbols, styles..."
             />
           </div>
@@ -377,7 +377,7 @@ export default function WorkstationPage() {
 
               {isUploading ? (
                 <div className="flex flex-col items-center justify-center py-7 text-center">
-                  <FaSpinner className="animate-spin text-xl text-violet-400 mb-2" />
+                  <FaSpinner className="animate-spin text-xl text-rose-400 mb-2" />
                   <span className="text-[10px] font-black text-zinc-300 uppercase tracking-wider">
                     Uploading Sketch...
                   </span>
@@ -436,7 +436,7 @@ export default function WorkstationPage() {
             </div>
 
             {inputImage && (
-              <p className="text-[9px] text-violet-400 font-bold mt-2 flex items-center gap-1.5 leading-relaxed">
+              <p className="text-[9px] text-rose-400 font-bold mt-2 flex items-center gap-1.5 leading-relaxed">
                 <FaInfoCircle className="text-xs" />
                 <span>
                   Sketch present: Workspace will automatically use image
@@ -458,7 +458,7 @@ export default function WorkstationPage() {
                 className={clsx(
                   "w-full bg-zinc-950 border rounded px-3.5 py-3 text-left text-xs font-black text-white flex justify-between items-center cursor-pointer transition-all",
                   isRatioOpen
-                    ? "border-violet-500 ring-1 ring-violet-500/20"
+                    ? "border-rose-500 ring-1 ring-rose-500/20"
                     : "border-zinc-800 hover:border-zinc-700",
                 )}
               >
@@ -490,13 +490,13 @@ export default function WorkstationPage() {
                         className={clsx(
                           "w-full text-left px-3.5 py-2 text-xs transition-colors flex items-center justify-between cursor-pointer",
                           isSelected
-                            ? "bg-violet-950/40 text-violet-400 font-extrabold"
+                            ? "bg-rose-950/40 text-rose-400 font-extrabold"
                             : "text-zinc-300 hover:bg-zinc-800 hover:text-white",
                         )}
                       >
                         <span>{ratio.label}</span>
                         {isSelected && (
-                          <FaCheck className="text-violet-400 text-[10px]" />
+                          <FaCheck className="text-rose-400 text-[10px]" />
                         )}
                       </button>
                     );
@@ -523,7 +523,7 @@ export default function WorkstationPage() {
                     className={clsx(
                       "flex flex-col items-center py-2.5 border rounded transition-all cursor-pointer",
                       isSelected
-                        ? "bg-violet-950/20 border-violet-500 text-white shadow-md shadow-violet-500/10"
+                        ? "bg-rose-950/20 border-rose-500 text-white shadow-md shadow-rose-500/10"
                         : "bg-zinc-950 border-zinc-800 hover:border-zinc-700 text-zinc-450 hover:text-zinc-200",
                     )}
                   >
@@ -550,13 +550,13 @@ export default function WorkstationPage() {
               className={clsx(
                 "w-full flex items-center justify-between p-3 rounded border transition-all cursor-pointer",
                 smartSearch
-                  ? "bg-violet-950/10 border-violet-550/40 text-violet-400"
+                  ? "bg-rose-950/10 border-rose-550/40 text-rose-400"
                   : "bg-zinc-950/40 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-zinc-350",
               )}
             >
               <div className="flex items-center gap-2.5">
                 <FaSearch
-                  className={smartSearch ? "text-violet-400" : "text-zinc-500"}
+                  className={smartSearch ? "text-rose-400" : "text-zinc-500"}
                 />
                 <span className="text-[10px] font-black uppercase tracking-wider">
                   Smart Search Prompt Enhancer
@@ -567,7 +567,7 @@ export default function WorkstationPage() {
               <div
                 className={clsx(
                   "w-8 h-4 rounded-full relative p-0.5 transition-colors duration-250 flex items-center",
-                  smartSearch ? "bg-violet-600" : "bg-zinc-800",
+                  smartSearch ? "bg-rose-600" : "bg-zinc-800",
                 )}
               >
                 <div
@@ -587,7 +587,7 @@ export default function WorkstationPage() {
             type="button"
             onClick={handleGenerate}
             disabled={generatingStatus === "generating" || isUploading}
-            className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-50 text-white py-3.5 rounded text-xs font-black uppercase tracking-widest transition-all cursor-pointer shadow-lg shadow-violet-600/10 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
+            className="w-full bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 disabled:opacity-50 text-white py-3.5 rounded text-xs font-black uppercase tracking-widest transition-all cursor-pointer shadow-lg shadow-rose-600/10 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
           >
             {generatingStatus === "generating" ? (
               <FaSpinner className="animate-spin text-sm" />
@@ -598,7 +598,7 @@ export default function WorkstationPage() {
             <span>
               {generatingStatus === "generating"
                 ? "Generating..."
-                : `Manifest Logo — ${currentCost} Credits`}
+                : `Generate logo — ${currentCost} Credits`}
             </span>
           </button>
 
@@ -614,8 +614,8 @@ export default function WorkstationPage() {
       <div className="flex-1 flex flex-col md:overflow-hidden overflow-visible min-w-0 bg-transparent relative">
         {/* Absolute Background Graphics */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-[60%] h-[60%] bg-violet-650/[0.04] rounded-full blur-[140px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[50%] h-[50%] bg-fuchsia-650/[0.04] rounded-full blur-[120px]" />
+          <div className="absolute top-1/4 left-1/4 w-[60%] h-[60%] bg-rose-650/[0.04] rounded-full blur-[140px] animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-[50%] h-[50%] bg-pink-650/[0.04] rounded-full blur-[120px]" />
         </div>
 
         <div className="flex-1 p-6 md:p-8 flex flex-col md:overflow-y-auto overflow-visible z-10 max-h-full">
@@ -624,8 +624,8 @@ export default function WorkstationPage() {
               /* Loading manifestation state */
               <div className="text-center space-y-4 max-w-sm">
                 <div className="relative h-20 w-20 mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 border-2 border-violet-600/10 rounded-full border-t-violet-500 animate-spin" />
-                  <FaHandSparkles className="text-2xl text-violet-400 animate-pulse" />
+                  <div className="absolute inset-0 border-2 border-rose-600/10 rounded-full border-t-rose-500 animate-spin" />
+                  <FaHandSparkles className="text-2xl text-rose-400 animate-pulse" />
                 </div>
                 <div className="space-y-1.5">
                   <h3 className="text-xs font-black uppercase text-white tracking-widest">
@@ -652,7 +652,7 @@ export default function WorkstationPage() {
                     {/* Sketch reference overlay if user generated with sketch */}
                     {activeLogo.inputImage && (
                       <div className="absolute bottom-6 left-6 bg-zinc-900/90 border border-zinc-800 p-2 rounded-xl shadow-2xl max-w-24 sm:max-w-28 pointer-events-auto">
-                        <span className="text-[7.5px] font-black text-violet-400 block uppercase mb-1 tracking-wider text-center">
+                        <span className="text-[7.5px] font-black text-rose-400 block uppercase mb-1 tracking-wider text-center">
                           Reference Sketch
                         </span>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -668,7 +668,7 @@ export default function WorkstationPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end pointer-events-none">
                       <div className="flex items-end justify-between pointer-events-auto">
                         <div className="space-y-1 pr-4 min-w-0">
-                          <span className="text-[9px] font-black uppercase text-violet-400 block tracking-wider">
+                          <span className="text-[9px] font-black uppercase text-rose-400 block tracking-wider">
                             Generated logo result
                           </span>
                           <h4 className="text-xs font-bold text-white truncate max-w-[200px] italic">
@@ -704,7 +704,7 @@ export default function WorkstationPage() {
               /* Engine standby state */
               <div className="max-w-md w-full text-center space-y-6">
                 <div className="relative h-20 w-20 mx-auto bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center shadow-md">
-                  <div className="absolute inset-0 bg-violet-600/5 blur-[20px] rounded-full" />
+                  <div className="absolute inset-0 bg-rose-600/5 blur-[20px] rounded-full" />
                   <FaHandSparkles className="text-2xl text-zinc-400" />
                 </div>
                 <div className="space-y-2">
