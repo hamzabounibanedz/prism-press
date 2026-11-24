@@ -20,7 +20,6 @@ export default function Navbar() {
   const [savingKey, setSavingKey] = useState(false);
 
   const appName = config?.appName || "AI SaaS";
-  const logoLetter = appName.trim().charAt(0).toUpperCase();
 
   const isApiKeyActive = Boolean(session?.user?.customApiKey);
 
@@ -111,9 +110,7 @@ export default function Navbar() {
         
         {/* Logo and Brand Title */}
         <Link href="/" className="flex items-center gap-2 transition-transform hover:scale-[1.02] active:scale-95">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white font-extrabold text-lg shadow-md shadow-primary/30">
-            {logoLetter}
-          </div>
+          <img src="/brand-mark.svg" alt="" width="36" height="36" />
           <span className="text-lg font-black tracking-tight text-primary-text text-nowrap">
             {appName}
           </span>

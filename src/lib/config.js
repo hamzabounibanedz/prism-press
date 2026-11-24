@@ -1,5 +1,5 @@
 const config = {
-  appName: "Ai Logo Studio",
+  appName: "Prism Press",
   auth: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID,
